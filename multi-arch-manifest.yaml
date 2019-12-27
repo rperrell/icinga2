@@ -4,13 +4,13 @@ manifests:
     platform:
       architecture: amd64
       os: linux
-  - image: cbrosius/icinga2:latest-arm64v8
-    platform:
-      architecture: arm64
-      os: linux
-      variant: v8
   - image: cbrosius/icinga2:latest-arm32v7
     platform:
       architecture: arm
       os: linux
       variant: v7
+#  - image: cbrosius/icinga2:latest-arm64v8
+#    platform:
+#      architecture: arm64
+#      os: linux
+#      variant: v8
