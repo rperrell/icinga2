@@ -4,7 +4,6 @@ FROM debian:buster AS qemu_arm32
 #QEMU Download
 ENV QEMU_URL https://github.com/balena-io/qemu/releases/download/v3.0.0%2Bresin/qemu-3.0.0+resin-arm.tar.gz
 RUN apt-get update \
-    && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends curl \
     && curl -L ${QEMU_URL} | tar zxvf - -C . --strip-components 1
 
