@@ -2,13 +2,15 @@
 
 This repository contains the source for the [icinga2](https://www.icinga.org/icinga2/) [docker](https://www.docker.com) image.
 
-The dockerhub-repository is located at [https://hub.docker.com/r/jordan/icinga2/](https://hub.docker.com/r/jordan/icinga2/).
+The dockerhub-repository is located at [https://hub.docker.com/r/cbrosius/icinga2/](https://hub.docker.com/r/cbrosius/icinga2/).
 
 This build is automated by push for the git-repo. Just crawl it via:
 
-    docker pull jordan/icinga2
+    docker pull cbrosius/icinga2
 
 ## Image details
+This Image is a fork of [jordan/icinga2](https://hub.docker.com/r/jordan/icinga2/) and does nothing more than adding MultiArch-Building via Dokerhub for ARM32/ARM64
+
 
 1. Based on debian:buster
 1. Key-Features:
@@ -31,7 +33,7 @@ This build is automated by push for the git-repo. Just crawl it via:
 
 Start a new container and bind to host's port 80
 
-    docker run -p 80:80 -h icinga2 -t jordan/icinga2:latest
+    docker run -p 80:80 -h icinga2 -t cbrosius/icinga2:latest
 
 ### docker-compose
 
