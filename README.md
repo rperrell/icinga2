@@ -2,14 +2,14 @@
 
 This repository contains the source for the [icinga2](https://www.icinga.org/icinga2/) [docker](https://www.docker.com) image.
 
-The dockerhub-repository is located at [https://hub.docker.com/r/cbrosius/icinga2/](https://hub.docker.com/r/cbrosius/icinga2/).
+The dockerhub-repository is located at [https://hub.docker.com/r/rperrell/icinga2/](https://hub.docker.com/r/rperrell/icinga2/).
 
 This build is automated by push for the git-repo. Just crawl it via:
 
-    docker pull cbrosius/icinga2
+    docker pull rperrell/icinga2
 
 ## Image details
-This Image is a fork of [jordan/icinga2](https://hub.docker.com/r/jordan/icinga2/) and does nothing more than adding MultiArch-Building via Dokerhub for ARM32/ARM64
+This Image is a fork of [jordan/icinga2](https://hub.docker.com/r/jordan/icinga2/) merged with [cbrosius/icinga2](https://hub.docker.com/r/cbrosius/icinga2/) and does nothing more than adding MultiArch-Building via Dokerhub for ARM32/ARM64
 
 
 1. Based on debian:buster
@@ -33,13 +33,13 @@ This Image is a fork of [jordan/icinga2](https://hub.docker.com/r/jordan/icinga2
 
 Start a new container and bind to host's port 80
 
-    docker run -p 80:80 -h icinga2 -t cbrosius/icinga2:latest
+    docker run -p 80:80 -h icinga2 -t rperrell/icinga2:latest
 
 ### docker-compose
 
 Clone the repository and create a file `secrets_sql.env`, which contains the `MYSQL_ROOT_PASSWORD` variable.
 
-    git clone https://github.com/jjethwa/icinga2.git
+    git clone https://github.com/rperrell/icinga2.git
     cd icinga2
     echo "MYSQL_ROOT_PASSWORD=<password>" > secrets_sql.env
     docker-compose up
@@ -56,7 +56,7 @@ If you want to save your php-sessions over multiple boots, mount `/var/lib/php/s
 
 example:
 ```
-docker run [...] -v $PWD/icingaweb2-sessions:/var/lib/php/sessions/ jordan/icinga2
+docker run [...] -v $PWD/icingaweb2-sessions:/var/lib/php/sessions/ rperrell/icinga2
 ```
 
 ## Graphite
@@ -71,7 +71,7 @@ docker run -t \
   -e ICINGA2_FEATURE_GRAPHITE=true \
   -e ICINGA2_FEATURE_GRAPHITE_HOST=graphite \
   -e ICINGA2_FEATURE_GRAPHITE_PORT=2003 \
-  jordan/icinga2:latest
+  rperrell/icinga2:latest
 ```
 
 ## Icinga Director
